@@ -21,3 +21,24 @@ Documenting which features are available on which iOS devices.
 - [x] isAccelerometerRecordingAvailable
 #### CMAltimeter
 - [x] isRelativeAltitudeAvailable
+
+## iPad Air (Wi-Fi) (iPad4,1)
+### CoreMotion
+#### CMPedometer
+- [ ] isStepCountingAvailable
+- [ ] isDistanceAvailable
+- [ ] isFloorCountingAvailable
+- [ ] isPaceAvailable
+- [ ] isCadenceAvailable
+- [ ] isPedometerEventTrackingAvailable
+#### CMMotionManager
+- [x] isAccelerometerAvailable
+- [x] isGyroAvailable
+- [x] isMagnetometerAvailable
+- [x] isDeviceMotionAvailable
+#### CMMotionActivityManager
+- [x] isActivityAvailable
+#### CMSensorRecorder
+- [ ] isAccelerometerRecordingAvailable
+#### CMAltimeter
+- [ ] isRelativeAltitudeAvailable
