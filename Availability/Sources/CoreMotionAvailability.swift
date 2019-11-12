@@ -31,7 +31,17 @@ import CoreMotion
 class CoreMotionAvailability {
   
   static func checkAvailability() {
-    
+    checkPedometerAvailability()
+  }
+  
+  static func checkPedometerAvailability() {
+    print("CMPedometer")
+    print(".isStepCountingAvailable: \(CMPedometer.isStepCountingAvailable())")
+    print(".isDistanceAvailable: \(CMPedometer.isDistanceAvailable())")
+    print(".isFloorCountingAvailable: \(CMPedometer.isFloorCountingAvailable())")
+    print(".isPaceAvailable: \(CMPedometer.isPaceAvailable())")
+    print(".isCadenceAvailable: \(CMPedometer.isCadenceAvailable())")
+    print(".isPedometerEventTrackingAvailable: \(CMPedometer.isPedometerEventTrackingAvailable())")
   }
   
 }
