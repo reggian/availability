@@ -32,6 +32,7 @@ class CoreMotionAvailability {
   
   static func checkAvailability() {
     checkPedometerAvailability()
+    checkMotionManagerAvailability()
   }
   
   static func checkPedometerAvailability() {
@@ -42,6 +43,15 @@ class CoreMotionAvailability {
     print(".isPaceAvailable: \(CMPedometer.isPaceAvailable())")
     print(".isCadenceAvailable: \(CMPedometer.isCadenceAvailable())")
     print(".isPedometerEventTrackingAvailable: \(CMPedometer.isPedometerEventTrackingAvailable())")
+  }
+  
+  static func checkMotionManagerAvailability() {
+    let motionManager = CMMotionManager()
+    print("CMMotionManager")
+    print(".isAccelerometerAvailable: \(motionManager.isAccelerometerAvailable)")
+    print(".isGyroAvailable: \(motionManager.isGyroAvailable)")
+    print(".isMagnetometerAvailable: \(motionManager.isMagnetometerAvailable)")
+    print(".isDeviceMotionAvailable: \(motionManager.isDeviceMotionAvailable)")
   }
   
 }
