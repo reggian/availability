@@ -26,6 +26,7 @@
 //
 
 import UIKit
+import Availability
 
 class ViewController: UIViewController {
   
