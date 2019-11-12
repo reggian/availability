@@ -12,6 +12,7 @@
 		E1162E5B237B59D90050A9F3 /* Availability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; };
 		E1162E5C237B59D90050A9F3 /* Availability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */; };
+		E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1162E62237B62E00050A9F3 /* SystemInfo.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		E1162E4C237B588C0050A9F3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1162E57237B58B20050A9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityTests.swift; sourceTree = "<group>"; };
+		E1162E62237B62E00050A9F3 /* SystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		E17C5BAF237B578400F953B8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
 				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
 			);
 			path = Sources;
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
+				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
