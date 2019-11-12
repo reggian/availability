@@ -34,6 +34,7 @@ class CoreMotionAvailability {
     checkPedometerAvailability()
     checkMotionManagerAvailability()
     checkMotionActivityAvailability()
+    checkSensorRecorderAvailability()
   }
   
   static func checkPedometerAvailability() {
@@ -58,6 +59,11 @@ class CoreMotionAvailability {
   static func checkMotionActivityAvailability() {
     print("CMMotionActivityManager")
     print(".isActivityAvailable: \(CMMotionActivityManager.isActivityAvailable())")
+  }
+  
+  static func checkSensorRecorderAvailability() {
+    print("CMSensorRecorder")
+    print(".isAccelerometerRecordingAvailable: \(CMSensorRecorder.isAccelerometerRecordingAvailable())")
   }
   
 }
