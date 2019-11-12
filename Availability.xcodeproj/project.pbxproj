@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E1162E51237B588C0050A9F3 /* Availability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; };
 		E1162E59237B58BC0050A9F3 /* AvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */; };
+		E1162E5B237B59D90050A9F3 /* Availability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; };
+		E1162E5C237B59D90050A9F3 /* Availability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -26,7 +28,28 @@
 			remoteGlobalIDString = E17C5BA6237B574B00F953B8;
 			remoteInfo = Availability;
 		};
+		E1162E5D237B59D90050A9F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E17C5A7D237AF18000F953B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E17C5BA6237B574B00F953B8;
+			remoteInfo = Availability;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1162E5F237B59DA0050A9F3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1162E5C237B59D90050A9F3 /* Availability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E1162E4C237B588C0050A9F3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1162E5B237B59D90050A9F3 /* Availability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +108,13 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		E1162E5A237B59D90050A9F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E17C5A7C237AF18000F953B8 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +123,7 @@
 				E17C5BA1237B565A00F953B8 /* Apps */,
 				E17C5AAD237AF38000F953B8 /* Supporting */,
 				E17C5A86237AF18000F953B8 /* Products */,
+				E1162E5A237B59D90050A9F3 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -228,10 +260,12 @@
 				E17C5A81237AF18000F953B8 /* Sources */,
 				E17C5A82237AF18000F953B8 /* Frameworks */,
 				E17C5A83237AF18000F953B8 /* Resources */,
+				E1162E5F237B59DA0050A9F3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1162E5E237B59D90050A9F3 /* PBXTargetDependency */,
 			);
 			name = iOSApp;
 			productName = availability;
@@ -358,6 +392,11 @@
 			isa = PBXTargetDependency;
 			target = E17C5BA6237B574B00F953B8 /* Availability */;
 			targetProxy = E1162E52237B588C0050A9F3 /* PBXContainerItemProxy */;
+		};
+		E1162E5E237B59D90050A9F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E17C5BA6237B574B00F953B8 /* Availability */;
+			targetProxy = E1162E5D237B59D90050A9F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
