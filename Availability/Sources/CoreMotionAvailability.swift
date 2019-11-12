@@ -30,4 +30,8 @@ import CoreMotion
 
 class CoreMotionAvailability {
   
+  static func checkAvailability() {
+    
+  }
+  
 }
