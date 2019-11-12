@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E17C5A85237AF18000F953B8 /* Availability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Availability.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8C237AF18000F953B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		E17C5A7C237AF18000F953B8 = {
 			isa = PBXGroup;
 			children = (
-				E17C5A87237AF18000F953B8 /* Availability */,
+				E17C5BA1237B565A00F953B8 /* Apps */,
 				E17C5A9E237AF18100F953B8 /* Tests */,
 				E17C5AAD237AF38000F953B8 /* Supporting */,
 				E17C5A86237AF18000F953B8 /* Products */,
@@ -79,20 +79,20 @@
 		E17C5A86237AF18000F953B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E17C5A85237AF18000F953B8 /* Availability.app */,
+				E17C5A85237AF18000F953B8 /* iOSApp.app */,
 				E17C5A9B237AF18100F953B8 /* AvailabilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E17C5A87237AF18000F953B8 /* Availability */ = {
+		E17C5A87237AF18000F953B8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				E17C5AAA237AF1C700F953B8 /* Sources */,
 				E17C5AAB237AF1CD00F953B8 /* Resources */,
 				E17C5AAC237AF1D600F953B8 /* Supporting */,
 			);
-			path = Availability;
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		E17C5A9E237AF18100F953B8 /* Tests */ = {
@@ -143,12 +143,20 @@
 			name = Supporting;
 			sourceTree = "<group>";
 		};
+		E17C5BA1237B565A00F953B8 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				E17C5A87237AF18000F953B8 /* iOS */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E17C5A84237AF18000F953B8 /* Availability */ = {
+		E17C5A84237AF18000F953B8 /* iOSApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E17C5AA4237AF18100F953B8 /* Build configuration list for PBXNativeTarget "Availability" */;
+			buildConfigurationList = E17C5AA4237AF18100F953B8 /* Build configuration list for PBXNativeTarget "iOSApp" */;
 			buildPhases = (
 				E17C5A81237AF18000F953B8 /* Sources */,
 				E17C5A82237AF18000F953B8 /* Frameworks */,
@@ -158,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = Availability;
+			name = iOSApp;
 			productName = availability;
-			productReference = E17C5A85237AF18000F953B8 /* Availability.app */;
+			productReference = E17C5A85237AF18000F953B8 /* iOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E17C5A9A237AF18100F953B8 /* AvailabilityTests */ = {
@@ -213,8 +221,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E17C5A84237AF18000F953B8 /* Availability */,
 				E17C5A9A237AF18100F953B8 /* AvailabilityTests */,
+				E17C5A84237AF18000F953B8 /* iOSApp */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +272,7 @@
 /* Begin PBXTargetDependency section */
 		E17C5A9D237AF18100F953B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E17C5A84237AF18000F953B8 /* Availability */;
+			target = E17C5A84237AF18000F953B8 /* iOSApp */;
 			targetProxy = E17C5A9C237AF18100F953B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -413,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Availability/Info.plist;
+				INFOPLIST_FILE = Apps/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Availability/Info.plist;
+				INFOPLIST_FILE = Apps/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E17C5AA4237AF18100F953B8 /* Build configuration list for PBXNativeTarget "Availability" */ = {
+		E17C5AA4237AF18100F953B8 /* Build configuration list for PBXNativeTarget "iOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E17C5AA5237AF18100F953B8 /* Debug */,

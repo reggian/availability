@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E17C5A84237AF18000F953B8"
-               BuildableName = "Availability.app"
-               BlueprintName = "Availability"
+               BuildableName = "iOSApp.app"
+               BlueprintName = "iOSApp"
                ReferencedContainer = "container:Availability.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,8 +55,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E17C5A84237AF18000F953B8"
-            BuildableName = "Availability.app"
-            BlueprintName = "Availability"
+            BuildableName = "iOSApp.app"
+            BlueprintName = "iOSApp"
             ReferencedContainer = "container:Availability.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E17C5A84237AF18000F953B8"
-            BuildableName = "Availability.app"
-            BlueprintName = "Availability"
+            BuildableName = "iOSApp.app"
+            BlueprintName = "iOSApp"
             ReferencedContainer = "container:Availability.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
