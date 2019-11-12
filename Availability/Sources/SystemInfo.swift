@@ -30,8 +30,7 @@ import Foundation
 public class SystemInfo {
   
   public static func checkCurrentSystem() {
-    print("HW Machine: \(hwMachine())")
-    print("Device Name: \(deviceName())")
+    printDeviceInfo(name: deviceName(), hw: hwMachine())
   }
   
   static func hwMachine() -> String {

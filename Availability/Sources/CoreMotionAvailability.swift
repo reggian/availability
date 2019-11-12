@@ -31,6 +31,7 @@ import CoreMotion
 public class CoreMotionAvailability {
   
   public static func checkAvailability() {
+    printFramework("CoreMotion")
     checkPedometerAvailability()
     checkMotionManagerAvailability()
     checkMotionActivityAvailability()
@@ -39,46 +40,46 @@ public class CoreMotionAvailability {
   }
   
   static func checkPedometerAvailability() {
-    print("CMPedometer")
-    print(".isStepCountingAvailable: \(CMPedometer.isStepCountingAvailable())")
-    print(".isDistanceAvailable: \(CMPedometer.isDistanceAvailable())")
-    print(".isFloorCountingAvailable: \(CMPedometer.isFloorCountingAvailable())")
-    print(".isPaceAvailable: \(CMPedometer.isPaceAvailable())")
+    printComponent("CMPedometer")
+    printAvailability(name: "isStepCountingAvailable", available: CMPedometer.isStepCountingAvailable())
+    printAvailability(name: "isDistanceAvailable", available: CMPedometer.isDistanceAvailable())
+    printAvailability(name: "isFloorCountingAvailable", available: CMPedometer.isFloorCountingAvailable())
+    printAvailability(name: "isPaceAvailable", available: CMPedometer.isPaceAvailable())
     #if os(iOS)
-    print(".isCadenceAvailable: \(CMPedometer.isCadenceAvailable())")
-    print(".isPedometerEventTrackingAvailable: \(CMPedometer.isPedometerEventTrackingAvailable())")
+    printAvailability(name: "isCadenceAvailable", available: CMPedometer.isCadenceAvailable())
+    printAvailability(name: "isPedometerEventTrackingAvailable", available: CMPedometer.isPedometerEventTrackingAvailable())
     #endif
   }
   
   static func checkMotionManagerAvailability() {
     #if os(iOS)
     let motionManager = CMMotionManager()
-    print("CMMotionManager")
-    print(".isAccelerometerAvailable: \(motionManager.isAccelerometerAvailable)")
-    print(".isGyroAvailable: \(motionManager.isGyroAvailable)")
-    print(".isMagnetometerAvailable: \(motionManager.isMagnetometerAvailable)")
-    print(".isDeviceMotionAvailable: \(motionManager.isDeviceMotionAvailable)")
+    printComponent("CMMotionManager")
+    printAvailability(name: "isAccelerometerAvailable", available: motionManager.isAccelerometerAvailable)
+    printAvailability(name: "isGyroAvailable", available: motionManager.isGyroAvailable)
+    printAvailability(name: "isMagnetometerAvailable", available: motionManager.isMagnetometerAvailable)
+    printAvailability(name: "isDeviceMotionAvailable", available: motionManager.isDeviceMotionAvailable)
     #endif
   }
   
   static func checkMotionActivityAvailability() {
     #if os(iOS)
-    print("CMMotionActivityManager")
-    print(".isActivityAvailable: \(CMMotionActivityManager.isActivityAvailable())")
+    printComponent("CMMotionActivityManager")
+    printAvailability(name: "isActivityAvailable", available: CMMotionActivityManager.isActivityAvailable())
     #endif
   }
   
   static func checkSensorRecorderAvailability() {
     #if os(iOS)
-    print("CMSensorRecorder")
-    print(".isAccelerometerRecordingAvailable: \(CMSensorRecorder.isAccelerometerRecordingAvailable())")
+    printComponent("CMSensorRecorder")
+    printAvailability(name: "isAccelerometerRecordingAvailable", available: CMSensorRecorder.isAccelerometerRecordingAvailable())
     #endif
   }
   
   static func checkAltimeterAvailability() {
     #if os(iOS)
-    print("CMAltimeter")
-    print(".isRelativeAltitudeAvailable: \(CMAltimeter.isRelativeAltitudeAvailable())")
+    printComponent("CMAltimeter")
+    printAvailability(name: "isRelativeAltitudeAvailable", available: CMAltimeter.isRelativeAltitudeAvailable())
     #endif
   }
   
