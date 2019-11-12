@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E17C5BA6237B574B00F953B8"
-               BuildableName = "Availability.framework"
-               BlueprintName = "Availability"
+               BlueprintIdentifier = "E17C5A84237AF18000F953B8"
+               BuildableName = "iOSApp.app"
+               BlueprintName = "iOSApp"
                ReferencedContainer = "container:Availability.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1162E4B237B588C0050A9F3"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
-               ReferencedContainer = "container:Availability.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E17C5A84237AF18000F953B8"
+            BuildableName = "iOSApp.app"
+            BlueprintName = "iOSApp"
+            ReferencedContainer = "container:Availability.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E17C5BA6237B574B00F953B8"
-            BuildableName = "Availability.framework"
-            BlueprintName = "Availability"
+            BlueprintIdentifier = "E17C5A84237AF18000F953B8"
+            BuildableName = "iOSApp.app"
+            BlueprintName = "iOSApp"
             ReferencedContainer = "container:Availability.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
