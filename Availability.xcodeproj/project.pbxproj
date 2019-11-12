@@ -14,6 +14,7 @@
 		E17C5A92237AF18100F953B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A91237AF18100F953B8 /* Assets.xcassets */; };
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
 		E17C5AA0237AF18100F953B8 /* AvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A9F237AF18100F953B8 /* AvailabilityTests.swift */; };
+		E17C5AB2237AFCEF00F953B8 /* CoreMotionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		E17C5AAE237AF39700F953B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E17C5AAF237AF39700F953B8 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E17C5AB0237AF3BA00F953B8 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionAvailability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				E17C5A88237AF18000F953B8 /* AppDelegate.swift */,
 				E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */,
 				E17C5A8C237AF18000F953B8 /* ViewController.swift */,
+				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */,
+				E17C5AB2237AFCEF00F953B8 /* CoreMotionAvailability.swift in Sources */,
 				E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */,
 				E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */,
 			);
