@@ -49,7 +49,9 @@ public final class Availability {
       let deviceInfo = DeviceInfo(
         model: model,
         name: name,
-        modules: []
+        modules: [
+          CoreMotionAvailability().availability()
+        ]
       )
       let encoder = JSONEncoder()
       encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
