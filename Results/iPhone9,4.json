@@ -1,0 +1,31 @@
+{
+  "availability" : {
+    "CoreMotion" : {
+      "CMAltimeter" : {
+        "isRelativeAltitudeAvailable" : true
+      },
+      "CMMotionActivityManager" : {
+        "isActivityAvailable" : true
+      },
+      "CMMotionManager" : {
+        "isAccelerometerAvailable" : true,
+        "isDeviceMotionAvailable" : true,
+        "isGyroAvailable" : true,
+        "isMagnetometerAvailable" : true
+      },
+      "CMPedometer" : {
+        "isCadenceAvailable" : true,
+        "isDistanceAvailable" : true,
+        "isFloorCountingAvailable" : true,
+        "isPaceAvailable" : true,
+        "isPedometerEventTrackingAvailable" : true,
+        "isStepCountingAvailable" : true
+      },
+      "CMSensorRecorder" : {
+        "isAccelerometerRecordingAvailable" : true
+      }
+    }
+  },
+  "model" : "iPhone9,4",
+  "name" : "iPhone 7 Plus (GSM)"
+}
