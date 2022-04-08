@@ -4,7 +4,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2019 reggian
+// Copyright (c) 2022 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,27 +26,55 @@
 //
 
 import XCTest
+@testable import Availability
 
 class AvailabilityTests: XCTestCase {
+  func test_availability() {
+    let sut = Availability(
+      device: StubWikiDevice(name: "Test"),
+      system: StubSystemInfo(model: "iPhone0,0")
+    )
+    
+    let expectation = expectation(description: "Should receive result")
+    
+    sut.getAvailability { result in
+      switch result {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        XCTFail(error.localizedDescription)
+      }
+      
+      expectation.fulfill()
+    }
+    
+    wait(for: [expectation], timeout: 0.11)
+  }
+}
+
+// MARK: - Helpers
+class StubWikiDevice: WikiDevice {
+  var name: String
   
-  override func setUp() {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+  init(name: String) {
+    self.name = name
   }
   
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
-  
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    measure {
-      // Put the code you want to measure the time of here.
+  override func retrieveModel(completion: @escaping (String) -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [name] in
+      completion(name)
     }
   }
+}
+
+class StubSystemInfo: SystemInfo {
+  var model: String
   
+  init(model: String) {
+    self.model = model
+  }
+  
+  override func hwMachine() -> String {
+    model
+  }
 }

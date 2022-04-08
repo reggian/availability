@@ -23,6 +23,7 @@
 		E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D2262800D45E00C69504 /* WikiDevice.swift */; };
 		E1F6D22B2800EBE600C69504 /* ResultModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */; };
 		E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* ResultModels.swift */; };
+		E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22E2800EC4700C69504 /* Availability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E1F6D2262800D45E00C69504 /* WikiDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDevice.swift; sourceTree = "<group>"; };
 		E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModelsTests.swift; sourceTree = "<group>"; };
 		E1F6D22C2800EBEF00C69504 /* ResultModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
+		E1F6D22E2800EC4700C69504 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 		E17C5BAF237B578400F953B8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E1F6D22E2800EC4700C69504 /* Availability.swift */,
 				E1F6D2262800D45E00C69504 /* WikiDevice.swift */,
 				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
 				E1F6D22C2800EBEF00C69504 /* ResultModels.swift */,
@@ -397,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
 				E18C2991237B6BA5008A1984 /* PrintFormatting.swift in Sources */,
 				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,

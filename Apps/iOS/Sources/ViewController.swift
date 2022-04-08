@@ -29,12 +29,19 @@ import UIKit
 import Availability
 
 class ViewController: UIViewController {
+  private let availability = Availability()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    SystemInfo.checkCurrentSystem()
-    CoreMotionAvailability.checkAvailability()
+    availability.getAvailability { result in
+      switch result {
+      case .success(let availability):
+        print(availability)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
   }
   
 }
