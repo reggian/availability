@@ -21,6 +21,8 @@
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
 		E18C2991237B6BA5008A1984 /* PrintFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C2990237B6BA5008A1984 /* PrintFormatting.swift */; };
 		E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D2262800D45E00C69504 /* WikiDevice.swift */; };
+		E1F6D22B2800EBE600C69504 /* ResultModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */; };
+		E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* ResultModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		E17C5BB1237B57B200F953B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E18C2990237B6BA5008A1984 /* PrintFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintFormatting.swift; sourceTree = "<group>"; };
 		E1F6D2262800D45E00C69504 /* WikiDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDevice.swift; sourceTree = "<group>"; };
+		E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModelsTests.swift; sourceTree = "<group>"; };
+		E1F6D22C2800EBEF00C69504 /* ResultModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */,
+				E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */,
 				E1162E57237B58B20050A9F3 /* Info.plist */,
 			);
 			path = Tests;
@@ -216,6 +221,7 @@
 			children = (
 				E1F6D2262800D45E00C69504 /* WikiDevice.swift */,
 				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
+				E1F6D22C2800EBEF00C69504 /* ResultModels.swift */,
 				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
 				E18C2990237B6BA5008A1984 /* PrintFormatting.swift */,
 			);
@@ -372,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F6D22B2800EBE600C69504 /* ResultModelsTests.swift in Sources */,
 				E1162E59237B58BC0050A9F3 /* AvailabilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +401,7 @@
 				E18C2991237B6BA5008A1984 /* PrintFormatting.swift in Sources */,
 				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,
 				E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */,
+				E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
