@@ -1,5 +1,14 @@
 {
   "availability" : {
+    "CoreLocation" : {
+      "CLLocationManager" : {
+        "headingAvailable" : true,
+        "isMonitoringAvailable BeaconRegion" : true,
+        "isMonitoringAvailable CircularRegion" : true,
+        "isRangingAvailable" : true,
+        "significantLocationChangeMonitoringAvailable" : true
+      }
+    },
     "CoreMotion" : {
       "CMAltimeter" : {
         "isRelativeAltitudeAvailable" : true
@@ -23,6 +32,11 @@
       },
       "CMSensorRecorder" : {
         "isAccelerometerRecordingAvailable" : true
+      }
+    },
+    "CoreNFC" : {
+      "NFCReaderSession" : {
+        "readingAvailable" : true
       }
     }
   },
