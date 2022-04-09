@@ -91,6 +91,7 @@
 		E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNameLoaderCompositesTests.swift; sourceTree = "<group>"; };
 		E12317C22801B7A400C18345 /* CurrentModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModelLoader.swift; sourceTree = "<group>"; };
 		E12317C62801C8E000C18345 /* WikiModelNameParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModelNameParser.swift; sourceTree = "<group>"; };
+		E12317C82801CC6800C18345 /* ParseWikiModelNamesForLocalLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseWikiModelNamesForLocalLoader.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 				E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */,
 				E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */,
 				E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */,
+				E12317C82801CC6800C18345 /* ParseWikiModelNamesForLocalLoader.swift */,
 				E1162E57237B58B20050A9F3 /* Info.plist */,
 			);
 			path = Tests;
