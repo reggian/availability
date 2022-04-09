@@ -29,6 +29,7 @@
 		E12317C32801B7A400C18345 /* CurrentModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317C22801B7A400C18345 /* CurrentModelLoader.swift */; };
 		E12317C72801C8E000C18345 /* WikiModelNameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317C62801C8E000C18345 /* WikiModelNameParser.swift */; };
 		E12317CB2801CDDB00C18345 /* SimulatorModelNameLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317CA2801CDDB00C18345 /* SimulatorModelNameLoaderTests.swift */; };
+		E12317CD2801CEFD00C18345 /* WikiModelNameLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317CC2801CEFD00C18345 /* WikiModelNameLoaderTests.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -94,6 +95,7 @@
 		E12317C62801C8E000C18345 /* WikiModelNameParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModelNameParser.swift; sourceTree = "<group>"; };
 		E12317C82801CC6800C18345 /* ParseWikiModelNamesForLocalLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseWikiModelNamesForLocalLoader.swift; sourceTree = "<group>"; };
 		E12317CA2801CDDB00C18345 /* SimulatorModelNameLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorModelNameLoaderTests.swift; sourceTree = "<group>"; };
+		E12317CC2801CEFD00C18345 /* WikiModelNameLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModelNameLoaderTests.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */,
 				E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */,
 				E12317CA2801CDDB00C18345 /* SimulatorModelNameLoaderTests.swift */,
+				E12317CC2801CEFD00C18345 /* WikiModelNameLoaderTests.swift */,
 				E12317C82801CC6800C18345 /* ParseWikiModelNamesForLocalLoader.swift */,
 				E1162E57237B58B20050A9F3 /* Info.plist */,
 			);
@@ -454,6 +457,7 @@
 			files = (
 				E12317C12801AD3900C18345 /* ModelNameLoaderCompositesTests.swift in Sources */,
 				E1F6D22B2800EBE600C69504 /* AvailabilityFormatterTests.swift in Sources */,
+				E12317CD2801CEFD00C18345 /* WikiModelNameLoaderTests.swift in Sources */,
 				E12317CB2801CDDB00C18345 /* SimulatorModelNameLoaderTests.swift in Sources */,
 				E1162E59237B58BC0050A9F3 /* AvailabilityTests.swift in Sources */,
 			);
