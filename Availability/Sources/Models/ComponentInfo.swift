@@ -27,7 +27,7 @@
 
 import Foundation
 
-struct ComponentInfo {
-  let name: String
-  let availability: [String: Bool]
+protocol ComponentInfo {
+  var name: String { get }
+  var availability: [String: Bool] { get }
 }

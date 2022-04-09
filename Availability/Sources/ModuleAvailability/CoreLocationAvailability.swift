@@ -28,8 +28,23 @@
 import Foundation
 import CoreLocation
 
+struct CoreLocationModuleInfo: ModuleInfo {
+  let name: String
+  var components: [ComponentInfo]
+  
+  init(name: String, components: [CoreLocationComponentInfo]) {
+    self.name = name
+    self.components = components
+  }
+}
+
+struct CoreLocationComponentInfo: ComponentInfo {
+  let name: String
+  let availability: [String : Bool]
+}
+
 class CoreLocationAvailability {
-  func availability() -> ModuleInfo {
+  func availability() -> CoreLocationModuleInfo {
     .init(
       name: "CoreLocation",
       components: [
@@ -40,7 +55,7 @@ class CoreLocationAvailability {
 }
 
 class CLLocationManagerAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreLocationComponentInfo {
     return .init(
       name: "CLLocationManager",
       availability: [

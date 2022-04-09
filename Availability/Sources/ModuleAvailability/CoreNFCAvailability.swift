@@ -28,8 +28,23 @@
 import Foundation
 import CoreNFC
 
+struct CoreNFCModuleInfo: ModuleInfo {
+  let name: String
+  let components: [ComponentInfo]
+  
+  init(name: String, components: [CoreNFCComponentInfo]) {
+    self.name = name
+    self.components = components
+  }
+}
+
+struct CoreNFCComponentInfo: ComponentInfo {
+  let name: String
+  let availability: [String : Bool]
+}
+
 class CoreNFCAvailability {
-  func availability() -> ModuleInfo {
+  func availability() -> CoreNFCModuleInfo {
     .init(
       name: "CoreNFC",
       components: [
@@ -40,7 +55,7 @@ class CoreNFCAvailability {
 }
 
 class NFCReaderSessionAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreNFCComponentInfo {
     return .init(
       name: "NFCReaderSession",
       availability: [

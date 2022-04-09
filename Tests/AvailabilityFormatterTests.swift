@@ -34,16 +34,16 @@ class AvailabilityFormatterTests: XCTestCase {
       model: "iPhone11,2",
       name: "iPhone XS",
       modules: [
-        ModuleInfo(
+        TestModuleInfo(
           name: "CoreMotion",
           components: [
-            ComponentInfo(
+            TestComponentInfo(
               name: "CMSensorRecorder",
               availability: [
                 "isAccelerometerRecordingAvailable": false
               ]
             ),
-            ComponentInfo(
+            TestComponentInfo(
               name: "CMAltimeter",
               availability: [
                 "isRelativeAltitudeAvailable": true
@@ -76,4 +76,20 @@ class AvailabilityFormatterTests: XCTestCase {
       """
     )
   }
+}
+
+// MARK: - Helpers
+private struct TestModuleInfo: ModuleInfo {
+  let name: String
+  let components: [ComponentInfo]
+  
+  init(name: String, components: [TestComponentInfo]) {
+    self.name = name
+    self.components = components
+  }
+}
+
+private struct TestComponentInfo: ComponentInfo {
+  let name: String
+  let availability: [String : Bool]
 }

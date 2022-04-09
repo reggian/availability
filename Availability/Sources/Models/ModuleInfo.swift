@@ -27,7 +27,7 @@
 
 import Foundation
 
-struct ModuleInfo {
-  let name: String
-  let components: [ComponentInfo]
+protocol ModuleInfo {
+  var name: String { get }
+  var components: [ComponentInfo] { get }
 }
