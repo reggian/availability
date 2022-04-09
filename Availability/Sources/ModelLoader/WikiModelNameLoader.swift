@@ -1,10 +1,10 @@
 //
-// SystemInfo.swift
+// WikiModelNameLoader.swift
 // Availability
 //
 // MIT License
 //
-// Copyright (c) 2019 reggian
+// Copyright (c) 2022 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,12 +27,12 @@
 
 import Foundation
 
-class SystemInfo {
-  func hwMachine() -> String {
-    var size = 0
-    sysctlbyname("hw.machine", nil, &size, nil, 0)
-    var machine = [CChar](repeating: 0,  count: Int(size))
-    sysctlbyname("hw.machine", &machine, &size, nil, 0)
-    return String(cString: machine)
+class WikiModelNameLoader: ModelNameLoader {
+  var parser = WikiModelNameParser()
+  
+  func loadName(for model: String, completion: @escaping (String?) -> Void) {
+    parser.loadNames(for: [model]) { names in
+      completion(names[model])
+    }
   }
 }

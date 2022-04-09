@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// SimulatorModelNameLoaderTests.swift
 // Availability
 //
 // MIT License
@@ -28,36 +28,28 @@
 import XCTest
 @testable import Availability
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
-    )
+class SimulatorModelNameLoaderTests: XCTestCase {
+  func test_loadName_detectsSimulator() {
+    let macosModels = ["i386", "x86_64", "arm64"]
     
-    let expectation = expectation(description: "Should receive result")
+    let sut = SimulatorModelNameLoader()
     
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
+    macosModels.forEach { model in
+      sut.loadName(for: model) { name in
+        XCTAssertEqual(name, "Simulator")
       }
-      
-      expectation.fulfill()
     }
-    
-    wait(for: [expectation], timeout: 0.11)
   }
-}
-
-// MARK: - Helpers
-struct StubModelLoader: ModelLoader {
-  let model: String
   
-  func loadModel() -> String {
-    return model
+  func test_loadName_ignoresDevices() {
+    let models = ["iPhone1,1", "iPad2,2", "iPod7,1", "Watch5,1"]
+    
+    let sut = SimulatorModelNameLoader()
+    
+    models.forEach { model in
+      sut.loadName(for: model) { name in
+        XCTAssertNil(name)
+      }
+    }
   }
 }

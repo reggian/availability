@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// ModelNameLoaderComposites.swift
 // Availability
 //
 // MIT License
@@ -25,39 +25,41 @@
 // SOFTWARE.
 //
 
-import XCTest
-@testable import Availability
+import Foundation
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
-    )
-    
-    let expectation = expectation(description: "Should receive result")
-    
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
+struct ModelNameLoaderWithFallback: ModelNameLoader {
+  let primary: ModelNameLoader
+  let secondary: ModelNameLoader
+  
+  func loadName(for model: String, completion: @escaping (String?) -> Void) {
+    primary.loadName(for: model) { result in
+      if let result = result {
+        completion(result)
+      } else {
+        secondary.loadName(for: model, completion: completion)
       }
-      
-      expectation.fulfill()
     }
-    
-    wait(for: [expectation], timeout: 0.11)
   }
 }
 
-// MARK: - Helpers
-struct StubModelLoader: ModelLoader {
-  let model: String
+struct ModelNameLoaderChain: ModelNameLoader {
+  let loader: ModelNameLoader?
   
-  func loadModel() -> String {
-    return model
+  init(_ loaders: [ModelNameLoader]) {
+    if loaders.isEmpty {
+      loader = nil
+    } else {
+      var loaders = loaders
+      let first = loaders.removeFirst()
+      loader = ModelNameLoaderWithFallback(
+        primary: first,
+        secondary: ModelNameLoaderChain(loaders)
+      )
+    }
+  }
+  
+  func loadName(for model: String, completion: @escaping (String?) -> Void) {
+    guard let loader = loader else { return completion(nil) }
+    loader.loadName(for: model, completion: completion)
   }
 }

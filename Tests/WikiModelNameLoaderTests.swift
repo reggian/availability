@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// WikiModelNameLoaderTests.swift
 // Availability
 //
 // MIT License
@@ -28,36 +28,50 @@
 import XCTest
 @testable import Availability
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
-    )
+class WikiModelNameLoaderTests: XCTestCase {
+  func test_loadName_forwardsCorrectName() {
+    let model = "iPhone7,2"
+    let name = "iPhone 6"
+    let spy = SpyWikiModelNameParser(loadNames: { models in
+      XCTAssertEqual(models.count, 1)
+      XCTAssertEqual(models.first, model)
+      return ["other model": "other name", model: name]
+    })
     
-    let expectation = expectation(description: "Should receive result")
+    let sut = WikiModelNameLoader()
+    sut.parser = spy
     
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
-      }
-      
-      expectation.fulfill()
+    sut.loadName(for: model) { result in
+      XCTAssertEqual(result, name)
     }
+  }
+  
+  func test_loadName_forwardsNil() {
+    let model = "iPhone7,2"
+    let spy = SpyWikiModelNameParser(loadNames: { models in
+      XCTAssertEqual(models.count, 1)
+      return [:]
+    })
     
-    wait(for: [expectation], timeout: 0.11)
+    let sut = WikiModelNameLoader()
+    sut.parser = spy
+    
+    sut.loadName(for: model) { name in
+      XCTAssertNil(name)
+    }
   }
 }
 
 // MARK: - Helpers
-struct StubModelLoader: ModelLoader {
-  let model: String
+private class SpyWikiModelNameParser: WikiModelNameParser {
+  let _loadNames: ([String]) -> [String : String]
   
-  func loadModel() -> String {
-    return model
+  init(loadNames: @escaping ([String]) -> [String : String]) {
+    _loadNames = loadNames
+  }
+  
+  override func loadNames(for models: [String], completion: @escaping ([String : String]) -> Void) {
+    let names = _loadNames(models)
+    completion(names)
   }
 }

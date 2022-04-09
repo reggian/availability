@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// CurrentModelLoader.swift
 // Availability
 //
 // MIT License
@@ -25,39 +25,31 @@
 // SOFTWARE.
 //
 
-import XCTest
-@testable import Availability
+import Foundation
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
-    )
-    
-    let expectation = expectation(description: "Should receive result")
-    
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
-      }
-      
-      expectation.fulfill()
-    }
-    
-    wait(for: [expectation], timeout: 0.11)
+struct CurrentModelLoader: ModelLoader {
+  func loadModel() -> String {
+    return CurrentModelLoader.utsnameModelCode ?? CurrentModelLoader.hwMachineModelCode
   }
 }
 
-// MARK: - Helpers
-struct StubModelLoader: ModelLoader {
-  let model: String
+// MARK: - Private
+private extension CurrentModelLoader {
+  static var utsnameModelCode: String? {
+    var systemInfo = utsname()
+    uname(&systemInfo)
+    return withUnsafePointer(to: &systemInfo.machine) {
+      $0.withMemoryRebound(to: CChar.self, capacity: 1) {
+        ptr in String.init(validatingUTF8: ptr)
+      }
+    }
+  }
   
-  func loadModel() -> String {
-    return model
+  static var hwMachineModelCode: String {
+    var size = 0
+    sysctlbyname("hw.machine", nil, &size, nil, 0)
+    var machine = [CChar](repeating: 0,  count: Int(size))
+    sysctlbyname("hw.machine", &machine, &size, nil, 0)
+    return String(cString: machine)
   }
 }

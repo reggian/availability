@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// ModelLoader.swift
 // Availability
 //
 // MIT License
@@ -25,39 +25,8 @@
 // SOFTWARE.
 //
 
-import XCTest
-@testable import Availability
+import Foundation
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
-    )
-    
-    let expectation = expectation(description: "Should receive result")
-    
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
-      }
-      
-      expectation.fulfill()
-    }
-    
-    wait(for: [expectation], timeout: 0.11)
-  }
-}
-
-// MARK: - Helpers
-struct StubModelLoader: ModelLoader {
-  let model: String
-  
-  func loadModel() -> String {
-    return model
-  }
+protocol ModelLoader {
+  func loadModel() -> String
 }
