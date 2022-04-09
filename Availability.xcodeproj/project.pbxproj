@@ -25,6 +25,8 @@
 		E12317B728019F9300C18345 /* WikiModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317B628019F9300C18345 /* WikiModelNameLoader.swift */; };
 		E12317B92801A1EA00C18345 /* LocalModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */; };
 		E12317BD2801A53500C18345 /* SimulatorModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */; };
+		E12317BF2801ACAE00C18345 /* ModelNameLoaderComposites.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317BE2801ACAE00C18345 /* ModelNameLoaderComposites.swift */; };
+		E12317C12801AD3900C18345 /* ModelNameLoaderCompositesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -86,6 +88,8 @@
 		E12317B628019F9300C18345 /* WikiModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModelNameLoader.swift; sourceTree = "<group>"; };
 		E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModelNameLoader.swift; sourceTree = "<group>"; };
 		E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorModelNameLoader.swift; sourceTree = "<group>"; };
+		E12317BE2801ACAE00C18345 /* ModelNameLoaderComposites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNameLoaderComposites.swift; sourceTree = "<group>"; };
+		E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNameLoaderCompositesTests.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			children = (
 				E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */,
 				E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */,
+				E12317C02801AD3900C18345 /* ModelNameLoaderCompositesTests.swift */,
 				E1162E57237B58B20050A9F3 /* Info.plist */,
 			);
 			path = Tests;
@@ -158,6 +163,7 @@
 			children = (
 				E12317B228019C1C00C18345 /* ModelLoader.swift */,
 				E12317B428019EF400C18345 /* ModelNameLoader.swift */,
+				E12317BE2801ACAE00C18345 /* ModelNameLoaderComposites.swift */,
 				E12317B628019F9300C18345 /* WikiModelNameLoader.swift */,
 				E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */,
 				E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */,
@@ -441,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12317C12801AD3900C18345 /* ModelNameLoaderCompositesTests.swift in Sources */,
 				E1F6D22B2800EBE600C69504 /* AvailabilityFormatterTests.swift in Sources */,
 				E1162E59237B58BC0050A9F3 /* AvailabilityTests.swift in Sources */,
 			);
@@ -468,6 +475,7 @@
 				E12317A728010D9A00C18345 /* CoreLocationAvailability.swift in Sources */,
 				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
+				E12317BF2801ACAE00C18345 /* ModelNameLoaderComposites.swift in Sources */,
 				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,
 				E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */,
 				E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */,
