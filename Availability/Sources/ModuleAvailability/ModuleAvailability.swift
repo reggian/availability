@@ -1,5 +1,5 @@
 //
-// CoreNFCAvailability.swift
+// ModuleAvailability.swift
 // Availability
 //
 // MIT License
@@ -26,41 +26,7 @@
 //
 
 import Foundation
-import CoreNFC
 
-struct CoreNFCModuleInfo: ModuleInfo {
-  let name: String
-  let components: [ComponentInfo]
-  
-  init(name: String, components: [CoreNFCComponentInfo]) {
-    self.name = name
-    self.components = components
-  }
-}
-
-struct CoreNFCComponentInfo: ComponentInfo {
-  let name: String
-  let availability: [String : Bool]
-}
-
-class CoreNFCAvailability: ModuleAvailability {
-  func availability() -> ModuleInfo {
-    CoreNFCModuleInfo(
-      name: "CoreNFC",
-      components: [
-        NFCReaderSessionAvailability().availability()
-      ]
-    )
-  }
-}
-
-class NFCReaderSessionAvailability {
-  func availability() -> CoreNFCComponentInfo {
-    return .init(
-      name: "NFCReaderSession",
-      availability: [
-        "readingAvailable": NFCReaderSession.readingAvailable,
-      ]
-    )
-  }
+protocol ModuleAvailability {
+  func availability() -> ModuleInfo
 }

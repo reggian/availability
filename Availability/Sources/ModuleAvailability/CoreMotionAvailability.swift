@@ -43,9 +43,9 @@ struct CoreMotionComponentInfo: ComponentInfo {
   let availability: [String : Bool]
 }
 
-class CoreMotionAvailability {
-  func availability() -> CoreMotionModuleInfo {
-    .init(
+class CoreMotionAvailability: ModuleAvailability {
+  func availability() -> ModuleInfo {
+    CoreMotionModuleInfo(
       name: "CoreMotion",
       components: [
         CMPedometerAvailability().availability(),

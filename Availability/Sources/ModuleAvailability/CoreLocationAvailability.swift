@@ -43,9 +43,9 @@ struct CoreLocationComponentInfo: ComponentInfo {
   let availability: [String : Bool]
 }
 
-class CoreLocationAvailability {
-  func availability() -> CoreLocationModuleInfo {
-    .init(
+class CoreLocationAvailability: ModuleAvailability {
+  func availability() -> ModuleInfo {
+    CoreLocationModuleInfo(
       name: "CoreLocation",
       components: [
         CLLocationManagerAvailability().availability()
