@@ -30,28 +30,33 @@ import Foundation
 public final class Availability {
   private let device: WikiDevice
   private let system: SystemInfo
+  private let modules: [ModuleAvailability]
   
   public convenience init() {
     self.init(
       device: WikiDevice(),
-      system: SystemInfo()
+      system: SystemInfo(),
+      modules: [
+        CoreMotionAvailability(),
+        CoreLocationAvailability(),
+        CoreNFCAvailability(),
+      ]
     )
   }
   
-  init(device: WikiDevice, system: SystemInfo) {
+  init(device: WikiDevice, system: SystemInfo, modules: [ModuleAvailability]) {
     self.device = device
     self.system = system
+    self.modules = modules
   }
   
   public func getAvailability(completion: @escaping (Result<String, Error>) -> Void) {
-    device.retrieveModel { [system] name in
+    device.retrieveModel { [system, modules] name in
       let model = system.hwMachine()
       let deviceInfo = DeviceInfo(
         model: model,
         name: name,
-        modules: [
-          CoreMotionAvailability().availability()
-        ]
+        modules: modules.map({ $0.availability() })
       )
       do {
         let jsonString = try AvailabilityFormatter().string(from: deviceInfo)

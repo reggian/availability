@@ -11,7 +11,7 @@
     },
     "CoreMotion" : {
       "CMAltimeter" : {
-        "isRelativeAltitudeAvailable" : false
+        "isRelativeAltitudeAvailable" : true
       },
       "CMMotionActivityManager" : {
         "isActivityAvailable" : true
@@ -23,12 +23,12 @@
         "isMagnetometerAvailable" : true
       },
       "CMPedometer" : {
-        "isCadenceAvailable" : false,
-        "isDistanceAvailable" : false,
-        "isFloorCountingAvailable" : false,
-        "isPaceAvailable" : false,
+        "isCadenceAvailable" : true,
+        "isDistanceAvailable" : true,
+        "isFloorCountingAvailable" : true,
+        "isPaceAvailable" : true,
         "isPedometerEventTrackingAvailable" : false,
-        "isStepCountingAvailable" : false
+        "isStepCountingAvailable" : true
       },
       "CMSensorRecorder" : {
         "isAccelerometerRecordingAvailable" : false
@@ -40,6 +40,6 @@
       }
     }
   },
-  "model" : "iPad4,1",
-  "name" : "iPad Air"
+  "model" : "iPhone7,1",
+  "name" : "iPhone 6 Plus"
 }

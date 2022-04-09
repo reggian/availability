@@ -1,10 +1,10 @@
 //
-// ModuleInfo.swift
+// ModuleAvailability.swift
 // Availability
 //
 // MIT License
 //
-// Copyright (c) 2022 reggian
+// Copyright (c) 2019 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,6 @@
 
 import Foundation
 
-protocol ModuleInfo {
-  var name: String { get }
-  var components: [ComponentInfo] { get }
+protocol ModuleAvailability {
+  func availability() -> ModuleInfo
 }

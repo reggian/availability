@@ -1,10 +1,10 @@
 //
-// ModuleInfo.swift
+// CoreNFCAvailability.swift
 // Availability
 //
 // MIT License
 //
-// Copyright (c) 2022 reggian
+// Copyright (c) 2019 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,8 +26,41 @@
 //
 
 import Foundation
+import CoreNFC
 
-protocol ModuleInfo {
-  var name: String { get }
-  var components: [ComponentInfo] { get }
+struct CoreNFCModuleInfo: ModuleInfo {
+  let name: String
+  let components: [ComponentInfo]
+  
+  init(name: String, components: [CoreNFCComponentInfo]) {
+    self.name = name
+    self.components = components
+  }
+}
+
+struct CoreNFCComponentInfo: ComponentInfo {
+  let name: String
+  let availability: [String : Bool]
+}
+
+class CoreNFCAvailability: ModuleAvailability {
+  func availability() -> ModuleInfo {
+    CoreNFCModuleInfo(
+      name: "CoreNFC",
+      components: [
+        NFCReaderSessionAvailability().availability()
+      ]
+    )
+  }
+}
+
+class NFCReaderSessionAvailability {
+  func availability() -> CoreNFCComponentInfo {
+    return .init(
+      name: "NFCReaderSession",
+      availability: [
+        "readingAvailable": NFCReaderSession.readingAvailable,
+      ]
+    )
+  }
 }

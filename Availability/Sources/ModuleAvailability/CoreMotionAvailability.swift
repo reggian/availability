@@ -28,9 +28,24 @@
 import Foundation
 import CoreMotion
 
-class CoreMotionAvailability {
+struct CoreMotionModuleInfo: ModuleInfo {
+  let name: String
+  let components: [ComponentInfo]
+  
+  init(name: String, components: [CoreMotionComponentInfo]) {
+    self.name = name
+    self.components = components
+  }
+}
+
+struct CoreMotionComponentInfo: ComponentInfo {
+  let name: String
+  let availability: [String : Bool]
+}
+
+class CoreMotionAvailability: ModuleAvailability {
   func availability() -> ModuleInfo {
-    .init(
+    CoreMotionModuleInfo(
       name: "CoreMotion",
       components: [
         CMPedometerAvailability().availability(),
@@ -44,7 +59,7 @@ class CoreMotionAvailability {
 }
 
 class CMPedometerAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreMotionComponentInfo {
     return .init(
       name: "CMPedometer",
       availability: [
@@ -60,7 +75,7 @@ class CMPedometerAvailability {
 }
 
 class CMMotionManagerAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreMotionComponentInfo {
     let motionManager = CMMotionManager()
     return .init(
       name: "CMMotionManager",
@@ -75,7 +90,7 @@ class CMMotionManagerAvailability {
 }
 
 class CMMotionActivityManagerAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreMotionComponentInfo {
     .init(
       name: "CMMotionActivityManager",
       availability: [
@@ -86,7 +101,7 @@ class CMMotionActivityManagerAvailability {
 }
 
 class CMSensorRecorderAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreMotionComponentInfo {
     .init(
       name: "CMSensorRecorder",
       availability: [
@@ -97,7 +112,7 @@ class CMSensorRecorderAvailability {
 }
 
 class CMAltimeterAvailability {
-  func availability() -> ComponentInfo {
+  func availability() -> CoreMotionComponentInfo {
     .init(
       name: "CMAltimeter",
       availability: [
