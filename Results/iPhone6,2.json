@@ -1,0 +1,31 @@
+{
+  "availability" : {
+    "CoreMotion" : {
+      "CMAltimeter" : {
+        "isRelativeAltitudeAvailable" : false
+      },
+      "CMMotionActivityManager" : {
+        "isActivityAvailable" : true
+      },
+      "CMMotionManager" : {
+        "isAccelerometerAvailable" : true,
+        "isDeviceMotionAvailable" : true,
+        "isGyroAvailable" : true,
+        "isMagnetometerAvailable" : true
+      },
+      "CMPedometer" : {
+        "isCadenceAvailable" : false,
+        "isDistanceAvailable" : true,
+        "isFloorCountingAvailable" : false,
+        "isPaceAvailable" : false,
+        "isPedometerEventTrackingAvailable" : false,
+        "isStepCountingAvailable" : true
+      },
+      "CMSensorRecorder" : {
+        "isAccelerometerRecordingAvailable" : false
+      }
+    }
+  },
+  "model" : "iPhone6,2",
+  "name" : "iPhone 5s (GSM+CDMA)"
+}

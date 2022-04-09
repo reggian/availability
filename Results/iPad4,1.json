@@ -1,0 +1,31 @@
+{
+  "availability" : {
+    "CoreMotion" : {
+      "CMAltimeter" : {
+        "isRelativeAltitudeAvailable" : false
+      },
+      "CMMotionActivityManager" : {
+        "isActivityAvailable" : true
+      },
+      "CMMotionManager" : {
+        "isAccelerometerAvailable" : true,
+        "isDeviceMotionAvailable" : true,
+        "isGyroAvailable" : true,
+        "isMagnetometerAvailable" : true
+      },
+      "CMPedometer" : {
+        "isCadenceAvailable" : false,
+        "isDistanceAvailable" : false,
+        "isFloorCountingAvailable" : false,
+        "isPaceAvailable" : false,
+        "isPedometerEventTrackingAvailable" : false,
+        "isStepCountingAvailable" : false
+      },
+      "CMSensorRecorder" : {
+        "isAccelerometerRecordingAvailable" : false
+      }
+    }
+  },
+  "model" : "iPad4,1",
+  "name" : "iPad Air (Wi-Fi)"
+}

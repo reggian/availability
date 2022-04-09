@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// DeviceInfo.swift
 // Availability
 //
 // MIT License
@@ -25,56 +25,10 @@
 // SOFTWARE.
 //
 
-import XCTest
-@testable import Availability
+import Foundation
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      device: StubWikiDevice(name: "Test"),
-      system: StubSystemInfo(model: "iPhone0,0")
-    )
-    
-    let expectation = expectation(description: "Should receive result")
-    
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
-      }
-      
-      expectation.fulfill()
-    }
-    
-    wait(for: [expectation], timeout: 0.11)
-  }
-}
-
-// MARK: - Helpers
-class StubWikiDevice: WikiDevice {
-  var name: String
-  
-  init(name: String) {
-    self.name = name
-  }
-  
-  override func retrieveModel(completion: @escaping (String) -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [name] in
-      completion(name)
-    }
-  }
-}
-
-class StubSystemInfo: SystemInfo {
-  var model: String
-  
-  init(model: String) {
-    self.model = model
-  }
-  
-  override func hwMachine() -> String {
-    model
-  }
+struct DeviceInfo {
+  let model: String
+  let name: String
+  let modules: [ModuleInfo]
 }

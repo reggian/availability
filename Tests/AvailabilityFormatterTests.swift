@@ -1,5 +1,5 @@
 //
-// AvailabilityTests.swift
+// AvailabilityFormatterTests.swift
 // Availability
 //
 // MIT License
@@ -28,53 +28,52 @@
 import XCTest
 @testable import Availability
 
-class AvailabilityTests: XCTestCase {
-  func test_availability() {
-    let sut = Availability(
-      device: StubWikiDevice(name: "Test"),
-      system: StubSystemInfo(model: "iPhone0,0")
+class AvailabilityFormatterTests: XCTestCase {
+  func test_encoding() throws {
+    let deviceInfo = DeviceInfo(
+      model: "iPhone11,2",
+      name: "iPhone XS",
+      modules: [
+        ModuleInfo(
+          name: "CoreMotion",
+          components: [
+            ComponentInfo(
+              name: "CMSensorRecorder",
+              availability: [
+                "isAccelerometerRecordingAvailable": false
+              ]
+            ),
+            ComponentInfo(
+              name: "CMAltimeter",
+              availability: [
+                "isRelativeAltitudeAvailable": true
+              ]
+            )
+
+          ]
+        )
+      ]
     )
     
-    let expectation = expectation(description: "Should receive result")
-    
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
+    let sut = AvailabilityFormatter()
+    let jsonString = try sut.string(from: deviceInfo)
+    XCTAssertEqual(jsonString,
+      """
+      {
+        "availability" : {
+          "CoreMotion" : {
+            "CMAltimeter" : {
+              "isRelativeAltitudeAvailable" : true
+            },
+            "CMSensorRecorder" : {
+              "isAccelerometerRecordingAvailable" : false
+            }
+          }
+        },
+        "model" : "iPhone11,2",
+        "name" : "iPhone XS"
       }
-      
-      expectation.fulfill()
-    }
-    
-    wait(for: [expectation], timeout: 0.11)
-  }
-}
-
-// MARK: - Helpers
-class StubWikiDevice: WikiDevice {
-  var name: String
-  
-  init(name: String) {
-    self.name = name
-  }
-  
-  override func retrieveModel(completion: @escaping (String) -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [name] in
-      completion(name)
-    }
-  }
-}
-
-class StubSystemInfo: SystemInfo {
-  var model: String
-  
-  init(model: String) {
-    self.model = model
-  }
-  
-  override func hwMachine() -> String {
-    model
+      """
+    )
   }
 }

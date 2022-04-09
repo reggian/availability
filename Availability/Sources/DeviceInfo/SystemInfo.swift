@@ -1,5 +1,5 @@
 //
-// ViewController.swift
+// SystemInfo.swift
 // Availability
 //
 // MIT License
@@ -25,23 +25,14 @@
 // SOFTWARE.
 //
 
-import UIKit
-import Availability
+import Foundation
 
-class ViewController: UIViewController {
-  private let availability = Availability()
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-    availability.getAvailability { result in
-      switch result {
-      case .success(let availability):
-        print(availability)
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
+class SystemInfo {
+  func hwMachine() -> String {
+    var size = 0
+    sysctlbyname("hw.machine", nil, &size, nil, 0)
+    var machine = [CChar](repeating: 0,  count: Int(size))
+    sysctlbyname("hw.machine", &machine, &size, nil, 0)
+    return String(cString: machine)
   }
-  
 }
