@@ -32,7 +32,8 @@ class AvailabilityTests: XCTestCase {
   func test_availability() {
     let sut = Availability(
       device: StubWikiDevice(name: "Test"),
-      system: StubSystemInfo(model: "iPhone0,0")
+      system: StubSystemInfo(model: "iPhone0,0"),
+      modules: []
     )
     
     let expectation = expectation(description: "Should receive result")
