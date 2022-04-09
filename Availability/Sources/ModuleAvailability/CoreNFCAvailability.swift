@@ -1,10 +1,10 @@
 //
-// Availability.swift
+// CoreNFCAvailability.swift
 // Availability
 //
 // MIT License
 //
-// Copyright (c) 2022 reggian
+// Copyright (c) 2019 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,41 +26,26 @@
 //
 
 import Foundation
+import CoreNFC
 
-public final class Availability {
-  private let device: WikiDevice
-  private let system: SystemInfo
-  
-  public convenience init() {
-    self.init(
-      device: WikiDevice(),
-      system: SystemInfo()
+class CoreNFCAvailability {
+  func availability() -> ModuleInfo {
+    .init(
+      name: "CoreNFC",
+      components: [
+        NFCReaderSessionAvailability().availability()
+      ]
     )
   }
-  
-  init(device: WikiDevice, system: SystemInfo) {
-    self.device = device
-    self.system = system
-  }
-  
-  public func getAvailability(completion: @escaping (Result<String, Error>) -> Void) {
-    device.retrieveModel { [system] name in
-      let model = system.hwMachine()
-      let deviceInfo = DeviceInfo(
-        model: model,
-        name: name,
-        modules: [
-          CoreMotionAvailability().availability(),
-          CoreLocationAvailability().availability(),
-          CoreNFCAvailability().availability(),
-        ]
-      )
-      do {
-        let jsonString = try AvailabilityFormatter().string(from: deviceInfo)
-        completion(.success(jsonString))
-      } catch let error {
-        completion(.failure(error))
-      }
-    }
+}
+
+class NFCReaderSessionAvailability {
+  func availability() -> ComponentInfo {
+    return .init(
+      name: "NFCReaderSession",
+      availability: [
+        "readingAvailable": NFCReaderSession.readingAvailable,
+      ]
+    )
   }
 }

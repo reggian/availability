@@ -17,6 +17,7 @@
 		E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A228010B7000C18345 /* ModuleInfo.swift */; };
 		E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A428010B8700C18345 /* ComponentInfo.swift */; };
 		E12317A728010D9A00C18345 /* CoreLocationAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A628010D9A00C18345 /* CoreLocationAvailability.swift */; };
+		E12317A92801110700C18345 /* CoreNFCAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A82801110700C18345 /* CoreNFCAvailability.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -69,6 +70,7 @@
 		E12317A228010B7000C18345 /* ModuleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInfo.swift; sourceTree = "<group>"; };
 		E12317A428010B8700C18345 /* ComponentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentInfo.swift; sourceTree = "<group>"; };
 		E12317A628010D9A00C18345 /* CoreLocationAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationAvailability.swift; sourceTree = "<group>"; };
+		E12317A82801110700C18345 /* CoreNFCAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNFCAvailability.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
 				E12317A628010D9A00C18345 /* CoreLocationAvailability.swift */,
+				E12317A82801110700C18345 /* CoreNFCAvailability.swift */,
 			);
 			path = ModuleAvailability;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */,
+				E12317A92801110700C18345 /* CoreNFCAvailability.swift in Sources */,
 				E12317A728010D9A00C18345 /* CoreLocationAvailability.swift in Sources */,
 				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
