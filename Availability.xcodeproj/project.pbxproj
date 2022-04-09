@@ -19,7 +19,6 @@
 		E17C5A90237AF18000F953B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A8E237AF18000F953B8 /* Main.storyboard */; };
 		E17C5A92237AF18100F953B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A91237AF18100F953B8 /* Assets.xcassets */; };
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
-		E18C2991237B6BA5008A1984 /* PrintFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C2990237B6BA5008A1984 /* PrintFormatting.swift */; };
 		E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D2262800D45E00C69504 /* WikiDevice.swift */; };
 		E1F6D22B2800EBE600C69504 /* ResultModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */; };
 		E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* ResultModels.swift */; };
@@ -77,7 +76,6 @@
 		E17C5BA7237B574B00F953B8 /* Availability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Availability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5BB0237B57B200F953B8 /* Availability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Availability.h; sourceTree = "<group>"; };
 		E17C5BB1237B57B200F953B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E18C2990237B6BA5008A1984 /* PrintFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintFormatting.swift; sourceTree = "<group>"; };
 		E1F6D2262800D45E00C69504 /* WikiDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDevice.swift; sourceTree = "<group>"; };
 		E1F6D22A2800EBE600C69504 /* ResultModelsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModelsTests.swift; sourceTree = "<group>"; };
 		E1F6D22C2800EBEF00C69504 /* ResultModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
 				E1F6D22C2800EBEF00C69504 /* ResultModels.swift */,
 				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
-				E18C2990237B6BA5008A1984 /* PrintFormatting.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -402,7 +399,6 @@
 			files = (
 				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
-				E18C2991237B6BA5008A1984 /* PrintFormatting.swift in Sources */,
 				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,
 				E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */,
 				E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */,
