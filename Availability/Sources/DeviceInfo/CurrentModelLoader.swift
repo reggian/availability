@@ -1,5 +1,5 @@
 //
-// ModelLoader.swift
+// CurrentModelLoader.swift
 // Availability
 //
 // MIT License
@@ -27,6 +27,29 @@
 
 import Foundation
 
-protocol ModelLoader {
-  func loadModel() -> String
+struct CurrentModelLoader: ModelLoader {
+  func loadModel() -> String {
+    return CurrentModelLoader.utsnameModelCode ?? CurrentModelLoader.hwMachineModelCode
+  }
+}
+
+// MARK: - Private
+private extension CurrentModelLoader {
+  static var utsnameModelCode: String? {
+    var systemInfo = utsname()
+    uname(&systemInfo)
+    return withUnsafePointer(to: &systemInfo.machine) {
+      $0.withMemoryRebound(to: CChar.self, capacity: 1) {
+        ptr in String.init(validatingUTF8: ptr)
+      }
+    }
+  }
+  
+  static var hwMachineModelCode: String {
+    var size = 0
+    sysctlbyname("hw.machine", nil, &size, nil, 0)
+    var machine = [CChar](repeating: 0,  count: Int(size))
+    sysctlbyname("hw.machine", &machine, &size, nil, 0)
+    return String(cString: machine)
+  }
 }
