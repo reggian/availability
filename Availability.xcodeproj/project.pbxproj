@@ -24,6 +24,7 @@
 		E12317B528019EF400C18345 /* ModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317B428019EF400C18345 /* ModelNameLoader.swift */; };
 		E12317B728019F9300C18345 /* WikiModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317B628019F9300C18345 /* WikiModelNameLoader.swift */; };
 		E12317B92801A1EA00C18345 /* LocalModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */; };
+		E12317BD2801A53500C18345 /* SimulatorModelNameLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -84,6 +85,7 @@
 		E12317B428019EF400C18345 /* ModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNameLoader.swift; sourceTree = "<group>"; };
 		E12317B628019F9300C18345 /* WikiModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModelNameLoader.swift; sourceTree = "<group>"; };
 		E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModelNameLoader.swift; sourceTree = "<group>"; };
+		E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorModelNameLoader.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				E12317B428019EF400C18345 /* ModelNameLoader.swift */,
 				E12317B628019F9300C18345 /* WikiModelNameLoader.swift */,
 				E12317B82801A1EA00C18345 /* LocalModelNameLoader.swift */,
+				E12317BC2801A53500C18345 /* SimulatorModelNameLoader.swift */,
 				E1F6D2262800D45E00C69504 /* WikiDevice.swift */,
 				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
 			);
@@ -459,6 +462,7 @@
 			files = (
 				E12317B328019C1C00C18345 /* ModelLoader.swift in Sources */,
 				E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */,
+				E12317BD2801A53500C18345 /* SimulatorModelNameLoader.swift in Sources */,
 				E12317B1280188CC00C18345 /* ModuleAvailability.swift in Sources */,
 				E12317A92801110700C18345 /* CoreNFCAvailability.swift in Sources */,
 				E12317A728010D9A00C18345 /* CoreLocationAvailability.swift in Sources */,
