@@ -28,14 +28,18 @@
 import Foundation
 
 public final class Availability {
-  private let device: WikiDevice
-  private let system: SystemInfo
+  private let modelLoader: ModelLoader
+  private let modelNameLoader: ModelNameLoader
   private let modules: [ModuleAvailability]
   
   public convenience init() {
     self.init(
-      device: WikiDevice(),
-      system: SystemInfo(),
+      modelLoader: CurrentModelLoader(),
+      modelNameLoader: ModelNameLoaderChain([
+        SimulatorModelNameLoader(),
+        WikiModelNameLoader(),
+        LocalModelNameLoader(),
+      ]),
       modules: [
         CoreMotionAvailability(),
         CoreLocationAvailability(),
@@ -44,18 +48,18 @@ public final class Availability {
     )
   }
   
-  init(device: WikiDevice, system: SystemInfo, modules: [ModuleAvailability]) {
-    self.device = device
-    self.system = system
+  init(modelLoader: ModelLoader, modelNameLoader: ModelNameLoader, modules: [ModuleAvailability]) {
+    self.modelLoader = modelLoader
+    self.modelNameLoader = modelNameLoader
     self.modules = modules
   }
   
   public func getAvailability(completion: @escaping (Result<String, Error>) -> Void) {
-    device.retrieveModel { [system, modules] name in
-      let model = system.hwMachine()
+    let model = modelLoader.loadModel()
+    modelNameLoader.loadName(for: model) { [modules] name in
       let deviceInfo = DeviceInfo(
         model: model,
-        name: name,
+        name: name ?? model,
         modules: modules.map({ $0.availability() })
       )
       do {

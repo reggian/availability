@@ -31,8 +31,8 @@ import XCTest
 class AvailabilityTests: XCTestCase {
   func test_availability() {
     let sut = Availability(
-      device: StubWikiDevice(name: "Test"),
-      system: StubSystemInfo(model: "iPhone0,0"),
+      modelLoader: StubModelLoader(model: "iPhone0,0"),
+      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
       modules: []
     )
     
@@ -54,28 +54,10 @@ class AvailabilityTests: XCTestCase {
 }
 
 // MARK: - Helpers
-class StubWikiDevice: WikiDevice {
-  var name: String
+struct StubModelLoader: ModelLoader {
+  let model: String
   
-  init(name: String) {
-    self.name = name
-  }
-  
-  override func retrieveModel(completion: @escaping (String) -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [name] in
-      completion(name)
-    }
-  }
-}
-
-class StubSystemInfo: SystemInfo {
-  var model: String
-  
-  init(model: String) {
-    self.model = model
-  }
-  
-  override func hwMachine() -> String {
-    model
+  func loadModel() -> String {
+    return model
   }
 }
