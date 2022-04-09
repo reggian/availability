@@ -27,29 +27,10 @@
 
 import Foundation
 
-struct DeviceInfo: Encodable {
+struct DeviceInfo {
   let model: String
   let name: String
   let modules: [ModuleInfo]
-  
-  enum CodingKeys: String, CodingKey {
-    case model
-    case name
-    case availability
-  }
-
-  func encode(to encoder: Encoder) throws {
-    var container = encoder.container(keyedBy: CodingKeys.self)
-    try container.encode(model, forKey: .model)
-    try container.encode(name, forKey: .name)
-    
-    let availability = modules.reduce(into: [:]) {
-      $0[$1.name] = $1.components.reduce(into: [:]) {
-        $0[$1.name] = $1.availability
-      }
-    }
-    try container.encode(availability, forKey: .availability)
-  }
 }
 
 struct ModuleInfo {

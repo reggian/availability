@@ -1,5 +1,5 @@
 //
-// ResultModelsTests.swift
+// AvailabilityFormatterTests.swift
 // Availability
 //
 // MIT License
@@ -28,9 +28,9 @@
 import XCTest
 @testable import Availability
 
-class ResultModelsTests: XCTestCase {
+class AvailabilityFormatterTests: XCTestCase {
   func test_encoding() throws {
-    let result = DeviceInfo(
+    let deviceInfo = DeviceInfo(
       model: "iPhone11,2",
       name: "iPhone XS",
       modules: [
@@ -42,28 +42,36 @@ class ResultModelsTests: XCTestCase {
               availability: [
                 "isAccelerometerRecordingAvailable": false
               ]
+            ),
+            ComponentInfo(
+              name: "CMAltimeter",
+              availability: [
+                "isRelativeAltitudeAvailable": true
+              ]
             )
+
           ]
         )
       ]
     )
     
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = .prettyPrinted
-    let jsonData = try encoder.encode(result)
-    let jsonString = try XCTUnwrap(String(data: jsonData, encoding: .utf8))
+    let sut = AvailabilityFormatter()
+    let jsonString = try sut.string(from: deviceInfo)
     XCTAssertEqual(jsonString,
       """
       {
-        "model" : "iPhone11,2",
-        "name" : "iPhone XS",
         "availability" : {
           "CoreMotion" : {
+            "CMAltimeter" : {
+              "isRelativeAltitudeAvailable" : true
+            },
             "CMSensorRecorder" : {
               "isAccelerometerRecordingAvailable" : false
             }
           }
-        }
+        },
+        "model" : "iPhone11,2",
+        "name" : "iPhone XS"
       }
       """
     )

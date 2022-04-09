@@ -53,24 +53,12 @@ public final class Availability {
           CoreMotionAvailability().availability()
         ]
       )
-      let encoder = JSONEncoder()
-      encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
       do {
-        let jsonData = try encoder.encode(deviceInfo)
-        guard let jsonString = String(data: jsonData, encoding: .utf8) else { throw JSONStringConversionError() }
+        let jsonString = try AvailabilityFormatter().string(from: deviceInfo)
         completion(.success(jsonString))
       } catch let error {
         completion(.failure(error))
       }
-    }
-  }
-}
-
-// MARK: - Private
-private extension Availability {
-  struct JSONStringConversionError: LocalizedError {
-    var errorDescription: String? {
-      "Converting JSON data into string has failed."
     }
   }
 }
