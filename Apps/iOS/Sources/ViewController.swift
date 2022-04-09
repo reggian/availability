@@ -34,11 +34,11 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    availability.getAvailability { result in
-      switch result {
-      case .success(let availability):
-        print(availability)
-      case .failure(let error):
+    availability.getAvailability { availabilityInfo in
+      do {
+        let jsonString = try AvailabilityFormatter().string(from: availabilityInfo)
+        print(jsonString)
+      } catch let error {
         print(error.localizedDescription)
       }
     }

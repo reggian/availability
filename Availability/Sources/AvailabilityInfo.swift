@@ -1,5 +1,5 @@
 //
-// ModuleInfo.swift
+// AvailabilityInfo.swift
 // Availability
 //
 // MIT License
@@ -27,7 +27,18 @@
 
 import Foundation
 
-protocol ModuleInfo {
+public struct AvailabilityInfo {
+  public let model: String
+  public let name: String
+  public let modules: [ModuleInfo]
+}
+
+public protocol ModuleInfo {
   var name: String { get }
   var components: [ComponentInfo] { get }
+}
+
+public protocol ComponentInfo {
+  var name: String { get }
+  var availability: [String: Bool] { get }
 }

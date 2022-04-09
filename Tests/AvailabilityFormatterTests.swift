@@ -30,7 +30,7 @@ import XCTest
 
 class AvailabilityFormatterTests: XCTestCase {
   func test_encoding() throws {
-    let deviceInfo = DeviceInfo(
+    let deviceInfo = AvailabilityInfo(
       model: "iPhone11,2",
       name: "iPhone XS",
       modules: [
@@ -79,7 +79,7 @@ class AvailabilityFormatterTests: XCTestCase {
 }
 
 // MARK: - Helpers
-private struct TestModuleInfo: ModuleInfo {
+struct TestModuleInfo: ModuleInfo {
   let name: String
   let components: [ComponentInfo]
   
@@ -89,7 +89,7 @@ private struct TestModuleInfo: ModuleInfo {
   }
 }
 
-private struct TestComponentInfo: ComponentInfo {
+struct TestComponentInfo: ComponentInfo {
   let name: String
   let availability: [String : Bool]
 }

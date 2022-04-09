@@ -30,22 +30,41 @@ import XCTest
 
 class AvailabilityTests: XCTestCase {
   func test_availability() {
+    let model = "iPhone0,0"
+    let name = "Test"
+    let moduleName = "TestModule"
+    let componentName = "TestComponent"
+    let isAvailable = true
+    
     let sut = Availability(
-      modelLoader: StubModelLoader(model: "iPhone0,0"),
-      modelNameLoader: StubModelNameLoader(model: "iPhone0,0", name: "Test"),
-      modules: []
+      modelLoader: StubModelLoader(model: model),
+      modelNameLoader: StubModelNameLoader(model: model, name: name),
+      modules: [
+        TestModuleAvailability(
+          moduleInfo: TestModuleInfo(
+            name: moduleName,
+            components: [
+              TestComponentInfo(
+                name: componentName,
+                availability: ["isAvailable" : isAvailable]
+              )
+            ]
+          )
+        )
+      ]
     )
     
     let expectation = expectation(description: "Should receive result")
     
-    sut.getAvailability { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        XCTFail(error.localizedDescription)
-      }
-      
+    sut.getAvailability { availabilityInfo in
+      XCTAssertEqual(availabilityInfo.model, model)
+      XCTAssertEqual(availabilityInfo.name, name)
+      XCTAssertEqual(availabilityInfo.modules.count, 1)
+      XCTAssertEqual(availabilityInfo.modules[0].name, moduleName)
+      XCTAssertEqual(availabilityInfo.modules[0].components.count, 1)
+      XCTAssertEqual(availabilityInfo.modules[0].components[0].name, componentName)
+      XCTAssertEqual(availabilityInfo.modules[0].components[0].availability.count, 1)
+      XCTAssertEqual(availabilityInfo.modules[0].components[0].availability["isAvailable"], isAvailable)
       expectation.fulfill()
     }
     
@@ -59,5 +78,13 @@ struct StubModelLoader: ModelLoader {
   
   func loadModel() -> String {
     return model
+  }
+}
+
+struct TestModuleAvailability: ModuleAvailability {
+  let moduleInfo: TestModuleInfo
+  
+  func availability() -> ModuleInfo {
+    return moduleInfo
   }
 }

@@ -13,8 +13,6 @@
 		E1162E5C237B59D90050A9F3 /* Availability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17C5BA7237B574B00F953B8 /* Availability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */; };
 		E123179E280105B800C18345 /* AvailabilityFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123179D280105B800C18345 /* AvailabilityFormatter.swift */; };
-		E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A228010B7000C18345 /* ModuleInfo.swift */; };
-		E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A428010B8700C18345 /* ComponentInfo.swift */; };
 		E12317A728010D9A00C18345 /* CoreLocationAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A628010D9A00C18345 /* CoreLocationAvailability.swift */; };
 		E12317A92801110700C18345 /* CoreNFCAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A82801110700C18345 /* CoreNFCAvailability.swift */; };
 		E12317AF280122CC00C18345 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12317AE280122CC00C18345 /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -37,7 +35,7 @@
 		E17C5A92237AF18100F953B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A91237AF18100F953B8 /* Assets.xcassets */; };
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
 		E1F6D22B2800EBE600C69504 /* AvailabilityFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */; };
-		E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */; };
+		E1F6D22D2800EBEF00C69504 /* AvailabilityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */; };
 		E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22E2800EC4700C69504 /* Availability.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +75,6 @@
 		E1162E57237B58B20050A9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityTests.swift; sourceTree = "<group>"; };
 		E123179D280105B800C18345 /* AvailabilityFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityFormatter.swift; sourceTree = "<group>"; };
-		E12317A228010B7000C18345 /* ModuleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInfo.swift; sourceTree = "<group>"; };
-		E12317A428010B8700C18345 /* ComponentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentInfo.swift; sourceTree = "<group>"; };
 		E12317A628010D9A00C18345 /* CoreLocationAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationAvailability.swift; sourceTree = "<group>"; };
 		E12317A82801110700C18345 /* CoreNFCAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNFCAvailability.swift; sourceTree = "<group>"; };
 		E12317AA2801147200C18345 /* iOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSApp.entitlements; sourceTree = "<group>"; };
@@ -112,7 +108,7 @@
 		E17C5BB0237B57B200F953B8 /* Availability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Availability.h; sourceTree = "<group>"; };
 		E17C5BB1237B57B200F953B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityFormatterTests.swift; sourceTree = "<group>"; };
-		E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityInfo.swift; sourceTree = "<group>"; };
 		E1F6D22E2800EC4700C69504 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,16 +186,6 @@
 				E12317A82801110700C18345 /* CoreNFCAvailability.swift */,
 			);
 			path = ModuleAvailability;
-			sourceTree = "<group>";
-		};
-		E12317A128010B3300C18345 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */,
-				E12317A228010B7000C18345 /* ModuleInfo.swift */,
-				E12317A428010B8700C18345 /* ComponentInfo.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		E17C5A7C237AF18000F953B8 = {
@@ -297,8 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				E1F6D22E2800EC4700C69504 /* Availability.swift */,
+				E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */,
 				E123179D280105B800C18345 /* AvailabilityFormatter.swift */,
-				E12317A128010B3300C18345 /* Models */,
 				E123179F28010AEC00C18345 /* ModelLoader */,
 				E12317A028010B0900C18345 /* ModuleAvailability */,
 			);
@@ -479,7 +465,6 @@
 			files = (
 				E12317C32801B7A400C18345 /* CurrentModelLoader.swift in Sources */,
 				E12317B328019C1C00C18345 /* ModelLoader.swift in Sources */,
-				E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */,
 				E12317BD2801A53500C18345 /* SimulatorModelNameLoader.swift in Sources */,
 				E12317B1280188CC00C18345 /* ModuleAvailability.swift in Sources */,
 				E12317A92801110700C18345 /* CoreNFCAvailability.swift in Sources */,
@@ -487,8 +472,7 @@
 				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
 				E12317BF2801ACAE00C18345 /* ModelNameLoaderComposites.swift in Sources */,
-				E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */,
-				E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */,
+				E1F6D22D2800EBEF00C69504 /* AvailabilityInfo.swift in Sources */,
 				E12317B92801A1EA00C18345 /* LocalModelNameLoader.swift in Sources */,
 				E12317C72801C8E000C18345 /* WikiModelNameParser.swift in Sources */,
 				E123179E280105B800C18345 /* AvailabilityFormatter.swift in Sources */,
