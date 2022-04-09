@@ -24,76 +24,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-// Adapted from Alessandro Ornano:
-// https://github.com/aornano/WikiDevice
-//
 
 import Foundation
 
 class WikiModelNameLoader: ModelNameLoader {
+  var parser = WikiModelNameParser()
+  
   func loadName(for model: String, completion: @escaping (String?) -> Void) {
-    guard let wikiUrl = URL(string:"https://www.theiphonewiki.com//w/api.php?action=parse&format=json&page=Models") else { return completion(nil) }
-    
-    let request = URLRequest(url: wikiUrl)
-    URLSession.shared.dataTask(with: request) { (data, response, error) in
-        do {
-            guard let data = data,
-                let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode,
-                error == nil else { return completion(nil) }
-            guard let convertedString = String(data: data, encoding: String.Encoding.utf8) else { return completion(nil) }
-            var wikiTables = convertedString.components(separatedBy: "wikitable")
-            wikiTables.removeFirst()
-            var tables = [[String]]()
-            wikiTables.enumerated().forEach{ index,table in
-                let rawRows = table.components(separatedBy: #"<tr>\n<td"#)
-                var counter = 0
-                var rows = [String]()
-                while counter < rawRows.count {
-                    let rawRow = rawRows[counter]
-                    if let subRowsNum = rawRow.components(separatedBy: #"rowspan=\""#).dropFirst().compactMap({ sub in
-                        (sub.range(of: #"\">"#)?.lowerBound).flatMap { endRange in
-                            String(sub[sub.startIndex ..< endRange])
-                        }
-                    }).first {
-                        if let subRowsTot = Int(subRowsNum) {
-                            var otherRows = ""
-                            for i in counter..<counter+subRowsTot {
-                                otherRows += rawRows[i]
-                            }
-                            let row = rawRow + otherRows
-                            rows.append(row)
-                            counter += subRowsTot-1
-                        }
-                    } else {
-                        rows.append(rawRows[counter])
-                    }
-                    counter += 1
-                }
-                tables.append(rows)
-            }
-            for table in tables {
-                if let rowIndex = table.firstIndex(where: {$0.lowercased().contains(model.lowercased())}) {
-                    let rows = table[rowIndex].components(separatedBy: "<td>")
-                    if rows.count>0 {
-                        if rows[0].contains("title") { //hyperlink
-                            if let (cleanedGen) = rows[0].components(separatedBy: #">"#).dropFirst().compactMap({ sub in
-                                (sub.range(of: "</")?.lowerBound).flatMap { endRange in
-                                    String(sub[sub.startIndex ..< endRange]).replacingOccurrences(of: #"\n"#, with: "")
-                                }
-                            }).first {
-                                completion(cleanedGen)
-                            }
-                        } else {
-                            let raw = rows[0].replacingOccurrences(of: "<td>", with: "")
-                            let cleanedGen = raw.replacingOccurrences(of: #"\n"#, with: "")
-                            completion(cleanedGen)
-                        }
-                        return
-                    }
-                }
-            }
-            completion(nil)
-        }
-    }.resume()
+    parser.loadNames(for: [model]) { names in
+      completion(names[model])
+    }
   }
 }
