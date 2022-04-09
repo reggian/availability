@@ -1,5 +1,5 @@
 //
-// ResultModels.swift
+// DeviceInfo.swift
 // Availability
 //
 // MIT License
@@ -31,14 +31,4 @@ struct DeviceInfo {
   let model: String
   let name: String
   let modules: [ModuleInfo]
-}
-
-struct ModuleInfo {
-  let name: String
-  let components: [ComponentInfo]
-}
-
-struct ComponentInfo {
-  let name: String
-  let availability: [String: Bool]
 }

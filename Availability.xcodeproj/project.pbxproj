@@ -14,6 +14,8 @@
 		E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */; };
 		E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1162E62237B62E00050A9F3 /* SystemInfo.swift */; };
 		E123179E280105B800C18345 /* AvailabilityFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123179D280105B800C18345 /* AvailabilityFormatter.swift */; };
+		E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A228010B7000C18345 /* ModuleInfo.swift */; };
+		E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12317A428010B8700C18345 /* ComponentInfo.swift */; };
 		E17C5A89237AF18000F953B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A88237AF18000F953B8 /* AppDelegate.swift */; };
 		E17C5A8B237AF18000F953B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */; };
 		E17C5A8D237AF18000F953B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C5A8C237AF18000F953B8 /* ViewController.swift */; };
@@ -22,7 +24,7 @@
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
 		E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D2262800D45E00C69504 /* WikiDevice.swift */; };
 		E1F6D22B2800EBE600C69504 /* AvailabilityFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */; };
-		E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* ResultModels.swift */; };
+		E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */; };
 		E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22E2800EC4700C69504 /* Availability.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		E1162E58237B58B20050A9F3 /* AvailabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityTests.swift; sourceTree = "<group>"; };
 		E1162E62237B62E00050A9F3 /* SystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
 		E123179D280105B800C18345 /* AvailabilityFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityFormatter.swift; sourceTree = "<group>"; };
+		E12317A228010B7000C18345 /* ModuleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInfo.swift; sourceTree = "<group>"; };
+		E12317A428010B8700C18345 /* ComponentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentInfo.swift; sourceTree = "<group>"; };
 		E17C5A85237AF18000F953B8 /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17C5A88237AF18000F953B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17C5A8A237AF18000F953B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 		E17C5BB1237B57B200F953B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F6D2262800D45E00C69504 /* WikiDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDevice.swift; sourceTree = "<group>"; };
 		E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityFormatterTests.swift; sourceTree = "<group>"; };
-		E1F6D22C2800EBEF00C69504 /* ResultModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModels.swift; sourceTree = "<group>"; };
+		E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		E1F6D22E2800EC4700C69504 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,33 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E123179F28010AEC00C18345 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E1F6D2262800D45E00C69504 /* WikiDevice.swift */,
+				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		E12317A028010B0900C18345 /* ModuleAvailability */ = {
+			isa = PBXGroup;
+			children = (
+				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
+			);
+			path = ModuleAvailability;
+			sourceTree = "<group>";
+		};
+		E12317A128010B3300C18345 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */,
+				E12317A228010B7000C18345 /* ModuleInfo.swift */,
+				E12317A428010B8700C18345 /* ComponentInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E17C5A7C237AF18000F953B8 = {
@@ -222,11 +253,10 @@
 			isa = PBXGroup;
 			children = (
 				E1F6D22E2800EC4700C69504 /* Availability.swift */,
-				E1F6D2262800D45E00C69504 /* WikiDevice.swift */,
-				E1162E62237B62E00050A9F3 /* SystemInfo.swift */,
-				E1F6D22C2800EBEF00C69504 /* ResultModels.swift */,
-				E17C5AB1237AFCEF00F953B8 /* CoreMotionAvailability.swift */,
 				E123179D280105B800C18345 /* AvailabilityFormatter.swift */,
+				E12317A128010B3300C18345 /* Models */,
+				E123179F28010AEC00C18345 /* DeviceInfo */,
+				E12317A028010B0900C18345 /* ModuleAvailability */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -400,11 +430,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12317A328010B7000C18345 /* ModuleInfo.swift in Sources */,
 				E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */,
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
 				E1162E63237B62E00050A9F3 /* SystemInfo.swift in Sources */,
 				E1F6D2272800D45E00C69504 /* WikiDevice.swift in Sources */,
-				E1F6D22D2800EBEF00C69504 /* ResultModels.swift in Sources */,
+				E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */,
+				E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */,
 				E123179E280105B800C18345 /* AvailabilityFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
