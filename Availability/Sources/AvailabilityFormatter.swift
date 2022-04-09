@@ -27,8 +27,10 @@
 
 import Foundation
 
-final class AvailabilityFormatter {
-  func string(from deviceInfo: AvailabilityInfo) throws -> String {
+public final class AvailabilityFormatter {
+  public init() { }
+  
+  public func string(from deviceInfo: AvailabilityInfo) throws -> String {
     let encoder = JSONEncoder()
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
     let jsonData = try encoder.encode(deviceInfo.encodable)

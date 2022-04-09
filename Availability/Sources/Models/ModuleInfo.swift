@@ -27,7 +27,7 @@
 
 import Foundation
 
-protocol ModuleInfo {
+public protocol ModuleInfo {
   var name: String { get }
   var components: [ComponentInfo] { get }
 }

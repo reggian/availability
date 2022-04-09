@@ -27,7 +27,7 @@
 
 import Foundation
 
-protocol ComponentInfo {
+public protocol ComponentInfo {
   var name: String { get }
   var availability: [String: Bool] { get }
 }

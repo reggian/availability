@@ -27,8 +27,8 @@
 
 import Foundation
 
-struct AvailabilityInfo {
-  let model: String
-  let name: String
-  let modules: [ModuleInfo]
+public struct AvailabilityInfo {
+  public let model: String
+  public let name: String
+  public let modules: [ModuleInfo]
 }
