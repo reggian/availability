@@ -1,10 +1,10 @@
 //
-// Availability.swift
+// CoreLocationAvailability.swift
 // Availability
 //
 // MIT License
 //
-// Copyright (c) 2022 reggian
+// Copyright (c) 2019 reggian
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,40 +26,30 @@
 //
 
 import Foundation
+import CoreLocation
 
-public final class Availability {
-  private let device: WikiDevice
-  private let system: SystemInfo
-  
-  public convenience init() {
-    self.init(
-      device: WikiDevice(),
-      system: SystemInfo()
+class CoreLocationAvailability {
+  func availability() -> ModuleInfo {
+    .init(
+      name: "CoreLocation",
+      components: [
+        CLLocationManagerAvailability().availability()
+      ]
     )
   }
-  
-  init(device: WikiDevice, system: SystemInfo) {
-    self.device = device
-    self.system = system
-  }
-  
-  public func getAvailability(completion: @escaping (Result<String, Error>) -> Void) {
-    device.retrieveModel { [system] name in
-      let model = system.hwMachine()
-      let deviceInfo = DeviceInfo(
-        model: model,
-        name: name,
-        modules: [
-          CoreMotionAvailability().availability(),
-          CoreLocationAvailability().availability(),
-        ]
-      )
-      do {
-        let jsonString = try AvailabilityFormatter().string(from: deviceInfo)
-        completion(.success(jsonString))
-      } catch let error {
-        completion(.failure(error))
-      }
-    }
+}
+
+class CLLocationManagerAvailability {
+  func availability() -> ComponentInfo {
+    return .init(
+      name: "CLLocationManager",
+      availability: [
+        "isMonitoringAvailable CircularRegion": CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self),
+        "isMonitoringAvailable BeaconRegion": CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self),
+        "isRangingAvailable": CLLocationManager.isRangingAvailable(),
+        "headingAvailable": CLLocationManager.headingAvailable(),
+        "significantLocationChangeMonitoringAvailable": CLLocationManager.significantLocationChangeMonitoringAvailable(),
+      ]
+    )
   }
 }
