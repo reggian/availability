@@ -30,7 +30,7 @@ import XCTest
 
 class AvailabilityFormatterTests: XCTestCase {
   func test_encoding() throws {
-    let deviceInfo = DeviceInfo(
+    let deviceInfo = AvailabilityInfo(
       model: "iPhone11,2",
       name: "iPhone XS",
       modules: [

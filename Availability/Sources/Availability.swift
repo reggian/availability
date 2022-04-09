@@ -57,13 +57,13 @@ public final class Availability {
   public func getAvailability(completion: @escaping (Result<String, Error>) -> Void) {
     let model = modelLoader.loadModel()
     modelNameLoader.loadName(for: model) { [modules] name in
-      let deviceInfo = DeviceInfo(
+      let availabilityInfo = AvailabilityInfo(
         model: model,
         name: name ?? model,
         modules: modules.map({ $0.availability() })
       )
       do {
-        let jsonString = try AvailabilityFormatter().string(from: deviceInfo)
+        let jsonString = try AvailabilityFormatter().string(from: availabilityInfo)
         completion(.success(jsonString))
       } catch let error {
         completion(.failure(error))

@@ -1,5 +1,5 @@
 //
-// DeviceInfo.swift
+// AvailabilityInfo.swift
 // Availability
 //
 // MIT License
@@ -27,7 +27,7 @@
 
 import Foundation
 
-struct DeviceInfo {
+struct AvailabilityInfo {
   let model: String
   let name: String
   let modules: [ModuleInfo]

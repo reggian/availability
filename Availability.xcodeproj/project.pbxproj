@@ -37,7 +37,7 @@
 		E17C5A92237AF18100F953B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A91237AF18100F953B8 /* Assets.xcassets */; };
 		E17C5A95237AF18100F953B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17C5A93237AF18100F953B8 /* LaunchScreen.storyboard */; };
 		E1F6D22B2800EBE600C69504 /* AvailabilityFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */; };
-		E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */; };
+		E1F6D22D2800EBEF00C69504 /* AvailabilityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */; };
 		E1F6D22F2800EC4700C69504 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6D22E2800EC4700C69504 /* Availability.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,7 +112,7 @@
 		E17C5BB0237B57B200F953B8 /* Availability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Availability.h; sourceTree = "<group>"; };
 		E17C5BB1237B57B200F953B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F6D22A2800EBE600C69504 /* AvailabilityFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityFormatterTests.swift; sourceTree = "<group>"; };
-		E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityInfo.swift; sourceTree = "<group>"; };
 		E1F6D22E2800EC4700C69504 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +195,7 @@
 		E12317A128010B3300C18345 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1F6D22C2800EBEF00C69504 /* DeviceInfo.swift */,
+				E1F6D22C2800EBEF00C69504 /* AvailabilityInfo.swift */,
 				E12317A228010B7000C18345 /* ModuleInfo.swift */,
 				E12317A428010B8700C18345 /* ComponentInfo.swift */,
 			);
@@ -488,7 +488,7 @@
 				E1162E60237B5A640050A9F3 /* CoreMotionAvailability.swift in Sources */,
 				E12317BF2801ACAE00C18345 /* ModelNameLoaderComposites.swift in Sources */,
 				E12317A528010B8700C18345 /* ComponentInfo.swift in Sources */,
-				E1F6D22D2800EBEF00C69504 /* DeviceInfo.swift in Sources */,
+				E1F6D22D2800EBEF00C69504 /* AvailabilityInfo.swift in Sources */,
 				E12317B92801A1EA00C18345 /* LocalModelNameLoader.swift in Sources */,
 				E12317C72801C8E000C18345 /* WikiModelNameParser.swift in Sources */,
 				E123179E280105B800C18345 /* AvailabilityFormatter.swift in Sources */,
